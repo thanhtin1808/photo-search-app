@@ -27,7 +27,7 @@ android {
             buildConfigField(
                 type = "String",
                 name = "BASE_URL",
-                value = "\"https://api.github.com\"",
+                value = "\"https://api.pexels.com\"",
             )
         }
 
@@ -35,7 +35,7 @@ android {
             buildConfigField(
                 type = "String",
                 name = "BASE_URL",
-                value = "\"https://api.github.com\"",
+                value = "\"https://api.pexels.com\"",
             )
         }
     }

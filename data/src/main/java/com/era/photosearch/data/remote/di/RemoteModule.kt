@@ -1,7 +1,7 @@
 package com.android.photosearch.data.remote.di
 
 import com.android.photosearch.data.remote.adapters.errors.ErrorHandlingCallAdapterFactory
-import com.android.photosearch.data.remote.interceptors.HeaderInterceptor
+import com.era.photosearch.data.remote.interceptors.HeaderInterceptor
 import com.android.photosearch.data.remote.services.UserService
 import com.era.photosearch.data.BuildConfig
 import dagger.Module

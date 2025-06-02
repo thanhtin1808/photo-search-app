@@ -18,7 +18,7 @@ import com.era.photosearch.R
 import com.era.photosearch.compose.components.uistate.UiStateScreen
 import com.era.photosearch.features.userdetail.models.UserDetailDestination
 import com.era.photosearch.features.users.components.UserList
-import com.era.photosearch.features.users.components.UserTopBar
+import com.era.photosearch.features.users.components.PhotoTopBar
 import com.era.photosearch.features.users.models.UserListEvent
 import com.era.photosearch.features.users.models.WebViewDestination
 
@@ -48,8 +48,8 @@ internal fun PhotoListScreen(
                 .fillMaxSize()
                 .background(White),
         ) {
-            UserTopBar(
-                title = stringResource(R.string.user_list_home_top_bar_title),
+            PhotoTopBar(
+                title = stringResource(R.string.photo_list_home_top_bar_title),
                 onBackClick = viewModel::onBackPress,
             )
             UserList(
