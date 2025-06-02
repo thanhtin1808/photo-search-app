@@ -1,0 +1,15 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+/fastlane/report.xml
+Gemfile.lock
+/.safedk
+*.hprof
+.gradle/buildOutputCleanup/cache.properties
+.idea/deploymentTargetSelector.xml
