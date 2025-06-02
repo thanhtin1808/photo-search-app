@@ -24,8 +24,12 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField ("String", "API_KEY", "\"SzPsGE3Aqnve3eDlLxAukeABsCkhYKYiQV5UaKLSx2Pv1q9Z1CXC77wA\"")
+        }
         release {
-            isMinifyEnabled = false
+            buildConfigField ("String", "API_KEY", "\"SzPsGE3Aqnve3eDlLxAukeABsCkhYKYiQV5UaKLSx2Pv1q9Z1CXC77wA\"")
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"

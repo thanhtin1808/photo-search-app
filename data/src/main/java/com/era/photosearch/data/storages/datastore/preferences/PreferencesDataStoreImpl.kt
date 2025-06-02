@@ -1,8 +1,9 @@
-package com.android.photosearch.data.storages.datastore.preferences
+package com.era.photosearch.data.storages.datastore.preferences
 
 import android.content.Context
 import androidx.datastore.preferences.core.booleanPreferencesKey
 import androidx.datastore.preferences.core.edit
+import com.android.photosearch.data.storages.datastore.preferences.PreferencesDataStore
 import dagger.hilt.android.qualifiers.ApplicationContext
 import io.github.osipxd.security.crypto.encryptedPreferencesDataStore
 import kotlinx.coroutines.flow.map

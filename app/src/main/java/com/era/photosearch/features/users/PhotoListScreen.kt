@@ -23,7 +23,7 @@ import com.era.photosearch.features.users.models.UserListEvent
 import com.era.photosearch.features.users.models.WebViewDestination
 
 @Composable
-internal fun UserListScreen(
+internal fun PhotoListScreen(
     navController: NavController,
     modifier: Modifier = Modifier,
     viewModel: UserListViewModel = hiltViewModel(),
