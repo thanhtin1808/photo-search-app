@@ -10,4 +10,8 @@
     <string name="user_details_top_bar_title">User Details</string>
     <string name="user_details_follower_title">Follower</string>
     <string name="user_details_following_title">Following</string>
+    <string name="txt_photo_search_hint">type here to search any photo</string>
+    <string name="txt_photo_search_label">search photo</string>
+    <string name="txt_photo_empty_search_hint">Search beautiful photos by using any keywords</string>
+    <string name="txt_photo_list_has_refreshed">The photo list has refreshed!</string>
 </resources>

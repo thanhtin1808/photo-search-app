@@ -8,19 +8,16 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.era.photosearch.domain.models.users.UserDetailModel
-import com.era.photosearch.features.users.components.UserItem
+import com.era.photosearch.domain.models.photos.UserDetailModel
+import com.era.photosearch.features.photos.components.PhotoItem
 
 @Composable
 internal fun UserDetailContent(userDetail: UserDetailModel, modifier: Modifier = Modifier) {
     Column(modifier = modifier.fillMaxSize()) {
-        UserItem(
+        PhotoItem(
             modifier = Modifier.height(130.dp),
-            isVisibleLocation = userDetail.isVisibleLocation,
-            userModel = userDetail.userModel,
-            userDetailModel = userDetail,
-            onUserLandingPageClick = { },
-            onUserClick = {},
+            photoModel = userDetail.photoModel,
+            onPhotoClick = {},
         )
         UserStatisticsItem(
             modifier = modifier,

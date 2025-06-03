@@ -13,7 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.era.photosearch.features.users.components.PhotoTopBar
+import com.era.photosearch.features.photos.components.PhotoTopBar
 import com.era.photosearch.R
 import com.era.photosearch.compose.components.uistate.UiStateScreen
 import com.era.photosearch.features.userdetail.components.UserDetailContent

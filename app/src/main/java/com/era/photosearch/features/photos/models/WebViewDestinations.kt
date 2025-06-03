@@ -1,4 +1,4 @@
-package com.era.photosearch.features.users.models
+package com.era.photosearch.features.photos.models
 
 import android.annotation.SuppressLint
 import kotlinx.serialization.Serializable

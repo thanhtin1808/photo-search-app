@@ -5,9 +5,9 @@ import androidx.navigation.toRoute
 import app.cash.turbine.test
 import com.era.photosearch.compose.uistate.models.ErrorState
 import com.era.photosearch.domain.models.errors.NoConnectionException
-import com.era.photosearch.domain.models.users.UserDetailModel
-import com.era.photosearch.domain.models.users.UserModel
-import com.era.photosearch.domain.usecases.users.GetUserDetailUseCase
+import com.era.photosearch.domain.models.photos.UserDetailModel
+import com.era.photosearch.domain.models.photos.PhotoModel
+import com.era.photosearch.domain.usecases.photos.GetUserDetailUseCase
 import com.era.photosearch.features.userdetail.models.UserDetailDestination
 import com.era.photosearch.features.userdetail.models.UserDetailUiState
 import com.era.photosearch.providers.dispatchers.DispatcherProvider
@@ -55,7 +55,7 @@ internal class UserDetailViewModelTest {
     @Test
     fun `getUserDetail is success`() = runTest {
         // Given
-        val userDetail = UserDetailModel(userModel = UserModel(name = "UserDetail 1"))
+        val userDetail = UserDetailModel(photoModel = PhotoModel(name = "UserDetail 1"))
         coEvery { getUserDetailUseCase("UserDetail 1") } returns userDetail
         every {
             savedStateHandle.toRoute<UserDetailDestination>()

@@ -1,4 +1,4 @@
-package com.era.photosearch.features.users.components
+package com.era.photosearch.features.photos.components
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -14,9 +14,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.viewinterop.AndroidView
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.era.photosearch.features.users.WebViewModel
+import com.era.photosearch.features.photos.WebViewModel
 import com.era.photosearch.compose.components.uistate.UiStateScreen
-import com.era.photosearch.features.users.models.WebViewEvent
+import com.era.photosearch.features.photos.models.WebViewEvent
 
 @SuppressLint("SetJavaScriptEnabled")
 @Composable

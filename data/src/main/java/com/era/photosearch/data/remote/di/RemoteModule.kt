@@ -1,8 +1,8 @@
-package com.android.photosearch.data.remote.di
+package com.era.photosearch.data.remote.di
 
 import com.android.photosearch.data.remote.adapters.errors.ErrorHandlingCallAdapterFactory
 import com.era.photosearch.data.remote.interceptors.HeaderInterceptor
-import com.android.photosearch.data.remote.services.UserService
+import com.era.photosearch.data.remote.services.PhotoService
 import com.era.photosearch.data.BuildConfig
 import dagger.Module
 import dagger.Provides
@@ -51,7 +51,7 @@ internal class RemoteModule {
 
     @Provides
     @Singleton
-    fun provideUserService(retrofit: Retrofit): UserService {
-        return retrofit.create(UserService::class.java)
+    fun providePhotoService(retrofit: Retrofit): PhotoService {
+        return retrofit.create(PhotoService::class.java)
     }
 }
