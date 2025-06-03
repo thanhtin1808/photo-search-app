@@ -5,4 +5,4 @@ import kotlinx.serialization.Serializable
 
 @SuppressLint("UnsafeOptInUsageError")
 @Serializable
-internal data class UserDetailDestination(val userName: String)
+internal data class PhotoDetailDestination(val photoSrc: String)

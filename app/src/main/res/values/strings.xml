@@ -7,7 +7,7 @@
     <string name="ok">OK</string>
     <string name="first_run_message">Welcome to the Photo Search App!</string>
     <string name="photo_list_home_top_bar_title">Photo List</string>
-    <string name="user_details_top_bar_title">User Details</string>
+    <string name="photo_detail_top_bar_title">Photo Detail</string>
     <string name="user_details_follower_title">Follower</string>
     <string name="user_details_following_title">Following</string>
     <string name="txt_photo_search_hint">type here to search any photo</string>

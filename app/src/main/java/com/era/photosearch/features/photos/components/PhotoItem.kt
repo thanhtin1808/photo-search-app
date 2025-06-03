@@ -1,9 +1,12 @@
 package com.era.photosearch.features.photos.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
@@ -32,7 +35,7 @@ internal fun PhotoItem(
 ) {
     val roundedCornerShape = RoundedCornerShape(12.dp)
     Surface(
-        modifier = modifier.fillMaxSize(),
+        modifier = modifier.fillMaxSize().padding(bottom = 20.dp),
         shadowElevation = 7.dp,
         shape = roundedCornerShape,
     ) {
@@ -46,6 +49,7 @@ internal fun PhotoItem(
                 Box(
                     modifier = Modifier
                         .fillMaxSize()
+                        .clickable{ onPhotoClick() }
                         .background(
                             color = colorResource(R.color.light_gray),
                             shape = RoundedCornerShape(12.dp)

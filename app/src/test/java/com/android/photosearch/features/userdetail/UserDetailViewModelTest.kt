@@ -5,10 +5,10 @@ import androidx.navigation.toRoute
 import app.cash.turbine.test
 import com.era.photosearch.compose.uistate.models.ErrorState
 import com.era.photosearch.domain.models.errors.NoConnectionException
-import com.era.photosearch.domain.models.photos.UserDetailModel
+import com.era.photosearch.domain.models.photos.PhotoDetailModel
 import com.era.photosearch.domain.models.photos.PhotoModel
 import com.era.photosearch.domain.usecases.photos.GetUserDetailUseCase
-import com.era.photosearch.features.userdetail.models.UserDetailDestination
+import com.era.photosearch.features.userdetail.models.PhotoDetailDestination
 import com.era.photosearch.features.userdetail.models.UserDetailUiState
 import com.era.photosearch.providers.dispatchers.DispatcherProvider
 import com.android.photosearch.utils.mockkSavedStateHandle
@@ -55,11 +55,11 @@ internal class UserDetailViewModelTest {
     @Test
     fun `getUserDetail is success`() = runTest {
         // Given
-        val userDetail = UserDetailModel(photoModel = PhotoModel(name = "UserDetail 1"))
+        val userDetail = PhotoDetailModel(photoModel = PhotoModel(name = "UserDetail 1"))
         coEvery { getUserDetailUseCase("UserDetail 1") } returns userDetail
         every {
-            savedStateHandle.toRoute<UserDetailDestination>()
-        } returns UserDetailDestination(userName = "UserDetail 1")
+            savedStateHandle.toRoute<PhotoDetailDestination>()
+        } returns PhotoDetailDestination(userName = "UserDetail 1")
 
         // When
         userDetailViewModel = createUserDetailDetailViewModel()
@@ -77,8 +77,8 @@ internal class UserDetailViewModelTest {
         val error = NoConnectionException()
         coEvery { getUserDetailUseCase("user1") } throws error
         coEvery {
-            savedStateHandle.toRoute<UserDetailDestination>()
-        } returns UserDetailDestination(userName = "user1")
+            savedStateHandle.toRoute<PhotoDetailDestination>()
+        } returns PhotoDetailDestination(userName = "user1")
 
         // When
         userDetailViewModel = createUserDetailDetailViewModel()
