@@ -8,7 +8,7 @@ internal sealed class PhotoListEvent {
 
     data object RefreshSuccess : PhotoListEvent()
 
-    data class OpenPhotoDetail(val userName: String) : PhotoListEvent()
+    data class OpenPhotoDetail(val url: String) : PhotoListEvent()
 
     data class OpenPhotoLandingPage(val url: String) : PhotoListEvent()
 }

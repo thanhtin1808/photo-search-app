@@ -29,7 +29,7 @@ import com.era.photosearch.features.photos.components.PhotoList
 import com.era.photosearch.features.photos.components.PhotoTopBar
 import com.era.photosearch.features.photos.models.PhotoListEvent
 import com.era.photosearch.features.photos.models.WebViewDestination
-import com.era.photosearch.features.userdetail.models.UserDetailDestination
+import com.era.photosearch.features.userdetail.models.PhotoDetailDestination
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -82,7 +82,7 @@ internal fun PhotoListScreen(
                 ) {
                     PhotoList(
                         photos = uiState.photos,
-                        onPhotoClick = {},
+                        onPhotoClick = viewModel::openPhotoDetail,
                         onLoadMore = { viewModel.loadMore() },
                     )
                 }
@@ -115,7 +115,7 @@ private fun handleEvent(
         }
 
         is PhotoListEvent.OpenPhotoDetail -> {
-            navController.navigate(UserDetailDestination(userName = event.userName))
+            navController.navigate(PhotoDetailDestination(photoSrc = event.url))
         }
 
         is PhotoListEvent.OpenPhotoLandingPage -> {

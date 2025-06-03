@@ -16,11 +16,11 @@ import androidx.navigation.NavController
 import com.era.photosearch.features.photos.components.PhotoTopBar
 import com.era.photosearch.R
 import com.era.photosearch.compose.components.uistate.UiStateScreen
-import com.era.photosearch.features.userdetail.components.UserDetailContent
+import com.era.photosearch.features.userdetail.components.PhotoDetailContent
 import com.era.photosearch.features.userdetail.models.UserDetailEvent
 
 @Composable
-internal fun UserDetailScreen(
+internal fun PhotoDetailScreen(
     navController: NavController,
     modifier: Modifier = Modifier,
     viewModel: UserDetailViewModel = hiltViewModel(),
@@ -42,11 +42,11 @@ internal fun UserDetailScreen(
                 .background(White),
         ) {
             PhotoTopBar(
-                title = stringResource(R.string.user_details_top_bar_title),
+                title = stringResource(R.string.photo_detail_top_bar_title),
                 onBackClick = { navController.navigateUp() },
             )
-            UserDetailContent(
-                userDetail = uiState.userDetail,
+            PhotoDetailContent(
+                photoDetail = uiState.photoDetail,
                 modifier = modifier
                     .padding(top = 5.dp)
                     .padding(horizontal = 16.dp),

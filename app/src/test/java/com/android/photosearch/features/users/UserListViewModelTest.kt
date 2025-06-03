@@ -127,7 +127,7 @@ internal class UserListViewModelTest {
         photoListViewModel = createUserListViewModel()
         advanceUntilIdle()
 
-        photoListViewModel.openUserDetail(userModels.first())
+        photoListViewModel.openPhotoDetail(userModels.first())
         advanceUntilIdle()
 
         // Then

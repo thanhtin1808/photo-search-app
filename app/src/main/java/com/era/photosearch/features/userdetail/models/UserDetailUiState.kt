@@ -1,7 +1,7 @@
 package com.era.photosearch.features.userdetail.models
 
-import com.era.photosearch.domain.models.photos.UserDetailModel
+import com.era.photosearch.domain.models.photos.PhotoDetailModel
 
 internal data class UserDetailUiState(
-    val userDetail: UserDetailModel = UserDetailModel(),
+    val photoDetail: PhotoDetailModel = PhotoDetailModel(),
 )

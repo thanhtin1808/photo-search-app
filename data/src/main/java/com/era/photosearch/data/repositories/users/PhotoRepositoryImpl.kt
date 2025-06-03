@@ -1,10 +1,8 @@
 package com.era.photosearch.data.repositories.users
 
-import androidx.room.Query
 import com.era.photosearch.data.remote.services.PhotoService
 import com.era.photosearch.data.repositories.users.mappers.toPhotoList
-import com.era.photosearch.data.repositories.users.mappers.toUserDetailModel
-import com.era.photosearch.domain.models.photos.UserDetailModel
+import com.era.photosearch.domain.models.photos.PhotoDetailModel
 import com.era.photosearch.domain.models.photos.PhotoModel
 import com.era.photosearch.domain.repositories.users.PhotoRepository
 import javax.inject.Inject
@@ -19,10 +17,8 @@ internal class PhotoRepositoryImpl @Inject constructor(
         return photoList
     }
 
-    override suspend fun getUserDetail(userName: String): UserDetailModel {
-        val response = photoService.getUserDetail(loginUsername = userName)
-        val userDetail = response.toUserDetailModel()
-        return userDetail
+    override suspend fun getUserDetail(userName: String): PhotoDetailModel {
+        return PhotoDetailModel()
     }
 }
 

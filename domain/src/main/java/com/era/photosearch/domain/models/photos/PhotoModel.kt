@@ -5,11 +5,8 @@ data class PhotoModel(
     val originalSourceImage: String = "",
 )
 
-data class UserDetailModel(
+data class PhotoDetailModel(
     val photoModel: PhotoModel = PhotoModel(),
-    val isVisibleLocation: Boolean = false,
-    val location: String = "",
-    val blogUrl: String = "",
-    val followers: Int = 0,
-    val following: Int = 0,
+    val photographer: String = "",
+    val like: Boolean = false,
 )

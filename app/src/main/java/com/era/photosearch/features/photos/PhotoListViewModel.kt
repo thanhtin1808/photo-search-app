@@ -123,8 +123,8 @@ internal class PhotoListViewModel @Inject constructor(
         return uiState.value.photos.size % pageSize != 0
     }
 
-    fun openUserDetail(user: PhotoModel) {
-//        sendEvent(UserListEvent.OpenUserDetail(user.name))
+    fun openPhotoDetail(photo: PhotoModel) {
+        sendEvent(PhotoListEvent.OpenPhotoDetail(photo.originalSourceImage))
     }
 
     fun onBackPress() {

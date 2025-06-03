@@ -6,8 +6,8 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.era.photosearch.features.userdetail.UserDetailScreen
-import com.era.photosearch.features.userdetail.models.UserDetailDestination
+import com.era.photosearch.features.userdetail.PhotoDetailScreen
+import com.era.photosearch.features.userdetail.models.PhotoDetailDestination
 import com.era.photosearch.features.photos.PhotoListScreen
 import com.era.photosearch.features.photos.components.WebViewScreen
 import com.era.photosearch.features.photos.models.PhotoListDestination
@@ -29,8 +29,8 @@ internal fun MainNavHost(
             )
         }
 
-        composable<UserDetailDestination> {
-            UserDetailScreen(
+        composable<PhotoDetailDestination> {
+            PhotoDetailScreen(
                 navController = navController,
             )
         }
