@@ -8,10 +8,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.era.photosearch.features.userdetail.UserDetailScreen
 import com.era.photosearch.features.userdetail.models.UserDetailDestination
-import com.era.photosearch.features.users.UserListScreen
-import com.era.photosearch.features.users.components.WebViewScreen
-import com.era.photosearch.features.users.models.UserListDestination
-import com.era.photosearch.features.users.models.WebViewDestination
+import com.era.photosearch.features.photos.PhotoListScreen
+import com.era.photosearch.features.photos.components.WebViewScreen
+import com.era.photosearch.features.photos.models.PhotoListDestination
+import com.era.photosearch.features.photos.models.WebViewDestination
 
 @Composable
 internal fun MainNavHost(
@@ -20,11 +20,11 @@ internal fun MainNavHost(
 ) {
     NavHost(
         navController = navController,
-        startDestination = UserListDestination,
+        startDestination = PhotoListDestination,
         modifier = modifier,
     ) {
-        composable<UserListDestination> {
-            UserListScreen(
+        composable<PhotoListDestination> {
+            PhotoListScreen(
                 navController = navController,
             )
         }

@@ -4,7 +4,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.toRoute
 import com.era.photosearch.providers.dispatchers.DispatcherProvider
 import com.era.photosearch.compose.uistate.viewmodel.UiStateViewModel
-import com.era.photosearch.domain.usecases.users.GetUserDetailUseCase
+import com.era.photosearch.domain.usecases.photos.GetUserDetailUseCase
 import com.era.photosearch.features.userdetail.models.UserDetailDestination
 import com.era.photosearch.features.userdetail.models.UserDetailEvent
 import com.era.photosearch.features.userdetail.models.UserDetailUiState

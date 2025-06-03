@@ -1,12 +1,12 @@
-package com.era.photosearch.features.users
+package com.era.photosearch.features.photos
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.navigation.toRoute
 import com.era.photosearch.providers.dispatchers.DispatcherProvider
 import com.era.photosearch.compose.uistate.viewmodel.UiStateViewModel
-import com.era.photosearch.features.users.models.WebViewDestination
-import com.era.photosearch.features.users.models.WebViewEvent
-import com.era.photosearch.features.users.models.WebViewUiState
+import com.era.photosearch.features.photos.models.WebViewDestination
+import com.era.photosearch.features.photos.models.WebViewEvent
+import com.era.photosearch.features.photos.models.WebViewUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

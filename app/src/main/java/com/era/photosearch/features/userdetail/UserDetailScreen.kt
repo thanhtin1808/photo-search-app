@@ -13,7 +13,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
-import com.era.photosearch.features.users.components.UserTopBar
+import com.era.photosearch.features.photos.components.PhotoTopBar
 import com.era.photosearch.R
 import com.era.photosearch.compose.components.uistate.UiStateScreen
 import com.era.photosearch.features.userdetail.components.UserDetailContent
@@ -41,7 +41,7 @@ internal fun UserDetailScreen(
                 .fillMaxSize()
                 .background(White),
         ) {
-            UserTopBar(
+            PhotoTopBar(
                 title = stringResource(R.string.user_details_top_bar_title),
                 onBackClick = { navController.navigateUp() },
             )

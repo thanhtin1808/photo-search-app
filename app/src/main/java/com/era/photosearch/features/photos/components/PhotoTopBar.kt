@@ -1,4 +1,4 @@
-package com.era.photosearch.features.users.components
+package com.era.photosearch.features.photos.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import com.era.photosearch.compose.theme.PhotoSearchTheme
 
 @Composable
-internal fun UserTopBar(
+internal fun PhotoTopBar(
     title: String,
     modifier: Modifier = Modifier,
     onBackClick: () -> Unit = {},
@@ -75,14 +75,14 @@ internal fun UserTopBar(
 internal fun UserTopBarPreview() {
     PhotoSearchTheme {
         Column {
-            UserTopBar(title = "Github Users")
+            PhotoTopBar(title = "Photo List")
             Spacer(
                 modifier = Modifier
                     .height(16.dp)
                     .background(Color.DarkGray)
                     .fillMaxWidth()
             )
-            UserTopBar(title = "User Details")
+            PhotoTopBar(title = "Photo Detail")
         }
     }
 

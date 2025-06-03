@@ -3,14 +3,14 @@ package com.android.photosearch.features.users
 import app.cash.turbine.test
 import com.era.photosearch.compose.uistate.models.ErrorState
 import com.era.photosearch.domain.models.errors.NoConnectionException
-import com.era.photosearch.domain.models.users.UserModel
+import com.era.photosearch.domain.models.photos.PhotoModel
 import com.era.photosearch.domain.usecases.preferences.IsFirstRunUseCase
 import com.era.photosearch.domain.usecases.preferences.SetFirstRunUseCase
-import com.era.photosearch.domain.usecases.users.GetUserListUseCase
-import com.era.photosearch.features.users.models.UserListEvent
-import com.era.photosearch.features.users.models.UserListUiState
+import com.era.photosearch.domain.usecases.photos.GetPhotoListUseCase
+import com.era.photosearch.features.photos.models.PhotoListEvent
+import com.era.photosearch.features.photos.models.PhotoListUiState
 import com.era.photosearch.providers.dispatchers.DispatcherProvider
-import com.era.photosearch.features.users.UserListViewModel
+import com.era.photosearch.features.photos.PhotoListViewModel
 import io.kotest.matchers.shouldBe
 import io.mockk.coEvery
 import io.mockk.every
@@ -34,11 +34,11 @@ internal class UserListViewModelTest {
     private val testDispatcher = StandardTestDispatcher()
 
     private val dispatcherProvider: DispatcherProvider = mockk()
-    private val getUserListUseCase: GetUserListUseCase = mockk()
+    private val getPhotoListUseCase: GetPhotoListUseCase = mockk()
     private val isFirstRunUseCase: IsFirstRunUseCase = mockk()
     private val setFirstRunUseCase: SetFirstRunUseCase = mockk()
 
-    private lateinit var userListViewModel: UserListViewModel
+    private lateinit var photoListViewModel: PhotoListViewModel
 
     @Before
     fun setUp() {
@@ -57,26 +57,26 @@ internal class UserListViewModelTest {
         val users = giveUserModelList()
 
         // When
-        userListViewModel = createUserListViewModel()
+        photoListViewModel = createUserListViewModel()
         advanceUntilIdle()
 
         // Then
-        userListViewModel.uiState.test {
-            expectMostRecentItem() shouldBe UserListUiState(users = users.toPersistentList())
+        photoListViewModel.uiState.test {
+            expectMostRecentItem() shouldBe PhotoListUiState(photos = users.toPersistentList())
         }
     }
 
     @Test
     fun `getUserModelList is fail`() = runTest {
         val error = NoConnectionException()
-        coEvery { getUserListUseCase(page = 1, pageSize = 20) } throws error
+        coEvery { getPhotoListUseCase(page = 1, pageSize = 20) } throws error
 
         // When
-        userListViewModel = createUserListViewModel()
+        photoListViewModel = createUserListViewModel()
         advanceUntilIdle()
 
         // Then
-        userListViewModel.error.test {
+        photoListViewModel.error.test {
             expectMostRecentItem() shouldBe ErrorState(error)
         }
     }
@@ -91,12 +91,12 @@ internal class UserListViewModelTest {
         coEvery { setFirstRunUseCase(false) } returns Unit
 
         // When
-        userListViewModel = createUserListViewModel()
+        photoListViewModel = createUserListViewModel()
         advanceUntilIdle()
 
         // Then
-        userListViewModel.singleEvent.test {
-            expectMostRecentItem() shouldBe UserListEvent.FirstRun
+        photoListViewModel.singleEvent.test {
+            expectMostRecentItem() shouldBe PhotoListEvent.FirstRun
         }
     }
 
@@ -109,11 +109,11 @@ internal class UserListViewModelTest {
         every { isFirstRunUseCase() } returns flowOf(expected)
 
         // When
-        userListViewModel = createUserListViewModel()
+        photoListViewModel = createUserListViewModel()
         advanceUntilIdle()
 
         // Then
-        userListViewModel.singleEvent.test {
+        photoListViewModel.singleEvent.test {
             expectNoEvents()
         }
     }
@@ -124,27 +124,27 @@ internal class UserListViewModelTest {
         val userModels = giveUserModelList()
 
         // When
-        userListViewModel = createUserListViewModel()
+        photoListViewModel = createUserListViewModel()
         advanceUntilIdle()
 
-        userListViewModel.openUserDetail(userModels.first())
+        photoListViewModel.openUserDetail(userModels.first())
         advanceUntilIdle()
 
         // Then
-        userListViewModel.singleEvent.test {
-            expectMostRecentItem() shouldBe UserListEvent.OpenUserDetail(userName = userModels.first().name)
+        photoListViewModel.singleEvent.test {
+            expectMostRecentItem() shouldBe PhotoListEvent.OpenPhotoDetail(userName = userModels.first().name)
         }
     }
 
-    private fun giveUserModelList(): List<UserModel> {
-        val userModels = listOf(UserModel(id = 0, name = "UserModel 0"),UserModel(id = 1, name = "UserModel 1"), UserModel(id = 2, name = "UserModel 2"))
-        coEvery { getUserListUseCase.invoke(page = 1, pageSize = 20) } returns userModels
-        return userModels
+    private fun giveUserModelList(): List<PhotoModel> {
+        val photoModels = listOf(PhotoModel(id = 0, name = "UserModel 0"),PhotoModel(id = 1, name = "UserModel 1"), PhotoModel(id = 2, name = "UserModel 2"))
+        coEvery { getPhotoListUseCase.invoke(page = 1, pageSize = 20) } returns photoModels
+        return photoModels
     }
 
-    private fun createUserListViewModel() = UserListViewModel(
+    private fun createUserListViewModel() = PhotoListViewModel(
         dispatcherProvider = dispatcherProvider,
-        getUserListUseCase = getUserListUseCase,
+        getPhotoListUseCase = getPhotoListUseCase,
         setFirstRunUseCase = setFirstRunUseCase,
         isFirstRunUseCase = isFirstRunUseCase,
     )

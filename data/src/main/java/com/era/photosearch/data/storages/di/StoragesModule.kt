@@ -1,7 +1,7 @@
 package com.android.photosearch.data.storages.di
 
 import com.android.photosearch.data.storages.datastore.preferences.PreferencesDataStore
-import com.android.photosearch.data.storages.datastore.preferences.PreferencesDataStoreImpl
+import com.era.photosearch.data.storages.datastore.preferences.PreferencesDataStoreImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
